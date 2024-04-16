@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-img">
-
+      <img :src="concatUrl()" alt="Img non presente nel database">
     </div>
     <ul class="card-description">
       <li>{{ movie.title }} {{ movie.name }}</li>
@@ -21,6 +21,12 @@
   export default {
     props: {
       movie: Object,
+    },
+
+    methods:{
+      concatUrl(){
+        return `https://image.tmdb.org/t/p/w342${this.movie.poster_path}`
+      }
     }
   }
 </script>
