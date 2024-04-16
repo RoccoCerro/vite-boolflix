@@ -3,17 +3,7 @@
     <div class="container">
       <ul class="row">
         <li v-for="movie in store.results" class="col-2">
-          <div class="card">
-            <div class="card-img">
-
-            </div>
-            <ul class="card-description">
-              <li>{{ movie.title }}</li>
-              <li>{{ movie.original_title }}</li>
-              <li>{{ movie.original_language }}</li>
-              <li>{{ movie.vote_average }}</li>
-            </ul>
-          </div>
+          <CardMovie :movie="movie"/>
         </li>
       </ul>
     </div>
@@ -22,12 +12,17 @@
 
 <script>
   import {store} from '../store.js'
+  import CardMovie from './CardMovie.vue'
 
   export default {
     data(){
       return{
         store: store,
       }
+    },
+
+    components:{
+      CardMovie
     },
 
     created(){

@@ -5,8 +5,7 @@
         <div class="col">LOGO</div>
         <div class="col">
           <input v-model="query" type="text" placeholder="Inserisci il nome del film">
-          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ] ">Cerca</button>
-          {{ query }}
+          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ]">Cerca</button>
         </div>
       </div>
     </div>

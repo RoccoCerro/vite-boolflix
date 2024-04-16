@@ -51,8 +51,7 @@
     },
 
     created(){
-    //   this.calledMovieServer()
-    console.log(this.query)
+      this.calledMovieServer()
     }
   }
 </script>
