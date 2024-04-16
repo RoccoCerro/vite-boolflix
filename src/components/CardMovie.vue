@@ -9,6 +9,9 @@
       <li v-if="movie.original_language === 'it'">
         <img src="../assets/italiana.webp" alt="">
       </li>
+      <li v-else>
+        le flag non ci sono in FontAwesome
+      </li>
       <li>{{ movie.vote_average }}</li>
     </ul>
   </div>
