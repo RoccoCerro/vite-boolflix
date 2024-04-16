@@ -1,20 +1,25 @@
 <template>
   <ContentHeader />
+  <ContentMain />
 </template>
 
 <script>
   import ContentHeader from "./components/ContentHeader.vue";
+  import ContentMain from './components/ContentMain.vue';
   import axios from 'axios';
   import {store} from './store.js'
 
   export default {
     components:{
-      ContentHeader
+      ContentHeader,
+      ContentMain
     },
 
     data(){
       return{
         store: store,
+        api_key: "0e75ad5772cce745dda6b939d03ca9de",
+        query: 'futuro',
       }
     },
 
@@ -24,8 +29,8 @@
           .get(
             `https://api.themoviedb.org/3/search/movie`,{
             params: {
-              api_key: "0e75ad5772cce745dda6b939d03ca9de",
-              query: "futuro"
+              api_key: this.api_key,
+              query: this.query,
             }
           }
         )
