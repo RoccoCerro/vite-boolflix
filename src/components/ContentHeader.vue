@@ -4,8 +4,9 @@
       <div class="row">
         <div class="col">LOGO</div>
         <div class="col">
-          <input type="text" placeholder="Inserisci il nome del film">
-          <button>Cerca</button>
+          <input v-model="query" type="text" placeholder="Inserisci il nome del film">
+          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ] ">Cerca</button>
+          {{ query }}
         </div>
       </div>
     </div>
@@ -13,8 +14,22 @@
 </template>
 
 <script>
+  import {store} from '../store.js'
+
   export default {
-    
+    data(){
+      return{
+        store: store,
+        query: ""
+      }
+    },
+
+    methods:{
+      searchMovie(){
+        this.store.query = this.query
+        console.log(store.query)
+      }
+    }
   }
 </script>
 

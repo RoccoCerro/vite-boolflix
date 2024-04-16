@@ -1,5 +1,5 @@
 <template>
-  <ContentHeader />
+  <ContentHeader @clickOnButtonHeader="[calledMovieServer()]" />
   <ContentMain />
 </template>
 
@@ -19,7 +19,7 @@
       return{
         store: store,
         api_key: "0e75ad5772cce745dda6b939d03ca9de",
-        query: 'futuro',
+        query: store.query,
       }
     },
 
@@ -52,7 +52,8 @@
     },
 
     created(){
-      this.calledMovieServer()
+    //   this.calledMovieServer()
+    console.log(this.query)
     }
   }
 </script>
