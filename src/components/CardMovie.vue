@@ -13,18 +13,26 @@
         le flag non ci sono in FontAwesome
       </li>
       <li v-html="fullStar"></li>
-      <li>{{ rating }}</li>
+      <li>
+        <!-- <VoteStar :voteAverage="movie.vote_average" /> -->
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+  import VoteStar from "./VoteStar.vue";
+
   export default {
     data(){
       return{
         fullStar:"",
         rating: null,
       }
+    },
+
+    components:{
+      VoteStar
     },
 
     props: {
@@ -38,7 +46,7 @@
 
       quantityOfTheSame(){
         this.rating = Math.round(this.movie.vote_average / 2);
-        console.log(this.rating)
+        console.log("rating",this.rating)
         for(let i = 1; i <= 5; i++){
           if(this.rating >= i){
             this.fullStar += '<span class="color-red"><i class="fa fa-solid fa-heart"></i></span>'
