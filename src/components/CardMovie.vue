@@ -6,7 +6,9 @@
     <ul class="card-description">
       <li>{{ movie.title }}</li>
       <li>{{ movie.original_title }}</li>
-      <li>{{ movie.original_language }}</li>
+      <li v-if="movie.original_language === 'it'">
+        <img src="../assets/italiana.webp" alt="">
+      </li>
       <li>{{ movie.vote_average }}</li>
     </ul>
   </div>
@@ -21,5 +23,10 @@
 </script>
 
 <style lang="scss" scoped>
+  .card-description {
 
+    img {
+      width: 15px;
+    }
+  }
 </style>
