@@ -19,7 +19,6 @@
       return{
         store: store,
         api_key: "0e75ad5772cce745dda6b939d03ca9de",
-        query: store.query,
       }
     },
 
@@ -30,7 +29,7 @@
             `https://api.themoviedb.org/3/search/movie`,{
             params: {
               api_key: this.api_key,
-              query: this.query,
+              query: this.store.query,
             }
           }
         )
