@@ -4,8 +4,8 @@
 
     </div>
     <ul class="card-description">
-      <li>{{ movie.title }}</li>
-      <li>{{ movie.original_title }}</li>
+      <li>{{ movie.title }} {{ movie.name }}</li>
+      <li>{{ movie.original_title }} {{ movie.original_name}}</li>
       <li v-if="movie.original_language === 'it'">
         <img src="../assets/italiana.webp" alt="">
       </li>
