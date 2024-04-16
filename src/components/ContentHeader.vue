@@ -2,7 +2,9 @@
   <div class="content-header">
     <div class="container">
       <div class="row">
-        <div class="col">LOGO</div>
+        <div class="col">
+          <img src="../assets/Netflix_Logo.png" alt="">
+        </div>
         <div class="col">
           <input v-model="query" type="text" placeholder="Inserisci il nome del film">
           <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ]">Cerca</button>
@@ -40,6 +42,7 @@
 
     .row {
       justify-content: space-between;
+      align-items: center;
     }
 
     input, button {
@@ -52,6 +55,10 @@
     input {
       outline: none;
       margin-right: 10px;
+    }
+
+    img {
+      width: 170px;
     }
   }
 </style>
