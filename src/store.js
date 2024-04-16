@@ -1,9 +1,19 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-  page: null,
-	results: [],
-  total_pages: null,
-  total_results: null,
-  query: ''
+  movie: {
+    page: null,
+    results: [],
+    total_pages: null,
+    total_results: null,
+    query: ''
+  },
+
+  tv: {
+    page: null,
+    results: [],
+    total_pages: null,
+    total_results: null,
+    query: ''
+  }
 })

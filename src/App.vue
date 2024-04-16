@@ -1,5 +1,5 @@
 <template>
-  <ContentHeader @clickOnButtonHeader="[calledMovieServer()]" />
+  <ContentHeader @clickOnButtonHeader="[calledMovieServer(), calledTvServer()]" />
   <ContentMain />
 </template>
 
@@ -29,31 +29,53 @@
             `https://api.themoviedb.org/3/search/movie`,{
             params: {
               api_key: this.api_key,
-              query: this.store.query,
+              query: this.store.movie.query,
             }
-          }
-        )
+            }
+          )
         .then((res)=>{
-          console.log('Risultato res', res)
-          console.log('Risultato res.data', res.data)
-          console.log('Risultato res.data.results', res.data.results)
+          // console.log('Risultato res', res)
+          // console.log('Risultato res.data', res.data)
+          // console.log('Risultato res.data.results', res.data.results)
 
-          this.store.results = res.data.results
-          // store.results = res.data.results 
-          this.store.page = res.data.page
-          this.store.total_pages = res.data.total_pages
-          this.store.total_results = res.data.total_results
+          this.store.movie.results = res.data.results
+          store.movie.results = res.data.results 
+          this.store.movie.page = res.data.page
+          this.store.movie.total_pages = res.data.total_pages
+          this.store.movie.total_results = res.data.total_results
 
-          console.log('Risultato this.store', this.store)
-          console.log('Risultato store', store)
+          console.log('Risultato this.store movie', this.store.movie)
+          console.log('Risultato store movie', store.movie)
         })
+      },
+      calledTvServer(){
+        axios
+          .get(
+            'https://api.themoviedb.org/3/search/tv', {
+            params: {
+            api_key: this.api_key,
+            query: this.store.movie.query,
+            }
+            }
+          )
+          .then((res)=>{
+            this.store.tv.results = res.data.results
+            store.tv.results = res.data.results 
+            this.store.tv.page = res.data.page
+            this.store.tv.total_pages = res.data.total_pages
+            this.store.tv.total_results = res.data.total_results
+            
+            console.log('Risultato serie tv', store.tv)
+          })
       }
     },
 
     created(){
-      this.calledMovieServer()
+      this.calledMovieServer(),
+      this.calledTvServer()
     }
   }
+
 </script>
 
 <style lang="scss">

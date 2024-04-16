@@ -2,7 +2,7 @@
   <div class="content-main">
     <div class="container">
       <ul class="row">
-        <li v-for="movie in store.results" class="col-2">
+        <li v-for="movie in store.movie.results" class="col-2">
           <CardMovie :movie="movie"/>
         </li>
       </ul>
@@ -26,7 +26,7 @@
     },
 
     created(){
-      console.log('store main',this.store)
+      console.log('store main',this.store.movie)
     }
   }
 </script>

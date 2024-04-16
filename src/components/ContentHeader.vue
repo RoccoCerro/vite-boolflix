@@ -25,8 +25,8 @@
 
     methods:{
       searchMovie(){
-        this.store.query = this.query
-        console.log(store.query)
+        this.store.movie.query = this.query
+        console.log(store.movie.query)
       }
     }
   }
