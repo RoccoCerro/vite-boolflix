@@ -7,7 +7,7 @@
   import ContentHeader from "./components/ContentHeader.vue";
   import ContentMain from './components/ContentMain.vue';
   import axios from 'axios';
-  import {store} from './store.js'
+  import {store} from './store.js';
 
   export default {
     components:{
