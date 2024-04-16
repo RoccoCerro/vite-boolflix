@@ -1,0 +1,9 @@
+@use './partials/reset.scss' as *;
+@use './partials/layout' as *;
+@use './partials/utilities' as *;
+@use './partials/variables' as *;
+
+body{
+  background-color: $background-color-body;
+  color: white;
+}
