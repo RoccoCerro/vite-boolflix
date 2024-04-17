@@ -12,11 +12,8 @@
       <li v-else>
         le flag non ci sono in FontAwesome
       </li>
-      <!-- <li v-html="fullStar"></li> -->
       <li>
-        <!-- <font-awesome-icon v-for="n in rating" :icon="['fas', 'star']" />
-        <font-awesome-icon v-for="n in 5-rating" :icon="['far', 'star']" /> -->
-        <VoteStar :voteAverage="rating" />
+        <VoteStar :voteAverage="movie.vote_average" />
       </li>
     </ul>
   </div>
@@ -43,26 +40,7 @@
     methods:{
       concatUrl(){
         return `https://image.tmdb.org/t/p/w342${this.movie.poster_path}`
-      },
-
-      quantityOfTheSame(){
-        this.rating = Math.round(this.movie.vote_average / 2);
       }
-      // quantityOfTheSame(){
-      //   const rating = Math.round(this.movie.vote_average / 2);
-      //   console.log("rating", rating)
-      //   for(let i = 1; i <= 5; i++){
-      //     if(rating >= i){
-      //       this.fullStar += `<span class="color-red"><font-awesome-icon :icon="['fas', 'star']" /></span>`          
-      //     }else if(rating <= i){
-      //       this.fullStar += '<font-awesome-icon :icon="["fas", "star"]" />'
-      //     }
-      //   }
-      // }
-    },
-
-    created(){
-      this.quantityOfTheSame()
     }
   }
 </script>
