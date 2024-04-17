@@ -3,7 +3,7 @@
     <div class="card-img">
       <img :src="concatUrl()" alt="Img non presente nel database">
     </div>
-    <ul class="card-description">
+    <ul class="card-description ">
       <li>{{ movie.title }} {{ movie.name }}</li>
       <li>{{ movie.original_title }} {{ movie.original_name}}</li>
       <li v-if="movie.original_language === 'it'" :key="movie.id">
@@ -46,10 +46,33 @@
 </script>
 
 <style lang="scss" scoped>
-  .card-description {
+  .card{
+    position: relative;
 
-    img {
-      width: 15px;
+    &:hover{
+
+      .card-img{
+        opacity: 0;
+      }
+
+      .card-description{
+        display: block;
+      }
     }
+
+    .card-description {
+      color: black;
+      position: absolute;
+      display: none;
+
+      
+      img {
+          width: 15px;
+        }
+        
+      }
   }
+  
+
+
 </style>
