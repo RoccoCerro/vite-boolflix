@@ -43,7 +43,7 @@
 <style lang="scss" scoped>
   .content-main{
 
-    li.no-movie,li.no-tv{
+    li.no-movie, li.no-tv{
       background-color: rgba(255, 255, 255, 0.193);
       margin-left: 15px;
       margin-top: 5px;
