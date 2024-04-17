@@ -6,11 +6,8 @@
     <ul class="card-description ">
       <li>{{ movie.title }} {{ movie.name }}</li>
       <li>{{ movie.original_title }} {{ movie.original_name}}</li>
-      <li v-if="movie.original_language === 'it'" :key="movie.id">
-        <img src="../assets/italiana.webp" alt="Bandiera Italiana">
-      </li>
-      <li v-else>
-        le flag non ci sono in FontAwesome
+      <li v-html="flagLanguage">
+        
       </li>
       <li>
         <VoteStar :voteAverage="movie.vote_average" />
@@ -26,6 +23,7 @@
     data(){
       return{
         rating: null,
+        flagLanguage: "",
       }
     },
 
@@ -40,7 +38,23 @@
     methods:{
       concatUrl(){
         return `https://image.tmdb.org/t/p/original${this.movie.poster_path}`
+      },
+
+      showFlags(){
+        if(this.movie.original_language === 'it'){
+          this.flagLanguage = '<img src="../assets/italiana.webp" alt="">'
+        }
+        else if(this.movie.original_language === 'en'){
+          this.flagLanguage = '<img src="../assets/bandiera-inghilterra.png" alt="">'
+        }
+        else{
+          this.flagLanguage = 'Non ci sono flag in fontowsome'
+        }
       }
+    },
+
+    created(){
+      this.showFlags()
     }
   }
 </script>
