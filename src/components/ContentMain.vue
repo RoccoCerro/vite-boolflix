@@ -2,10 +2,10 @@
   <div class="content-main">
     <div class="container">
       <ul class="row">
-        <li v-for="movie in store.movie.results" class="col-2">
+        <li v-for="movie in store.movie.results" class="col-3">
           <CardMovie :movie="movie"/>
         </li>
-        <li v-for="movie in store.tv.results" class="col-2">
+        <li v-for="movie in store.tv.results" class="col-3">
           <CardMovie :movie="movie"/>
         </li>
       </ul>

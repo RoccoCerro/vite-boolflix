@@ -39,40 +39,12 @@
 
     methods:{
       concatUrl(){
-        return `https://image.tmdb.org/t/p/w342${this.movie.poster_path}`
+        return `https://image.tmdb.org/t/p/original${this.movie.poster_path}`
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .card{
-    position: relative;
-
-    &:hover{
-
-      .card-img{
-        opacity: 0;
-      }
-
-      .card-description{
-        display: block;
-      }
-    }
-
-    .card-description {
-      color: black;
-      position: absolute;
-      display: none;
-
-      
-      img {
-          width: 15px;
-        }
-        
-      }
-  }
-  
-
-
+  @use '../style/partials/styleCard.scss';
 </style>
