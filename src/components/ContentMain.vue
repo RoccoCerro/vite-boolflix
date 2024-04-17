@@ -41,5 +41,11 @@
 </script>
 
 <style lang="scss" scoped>
+  .content-main{
+
+    li:nth-last-child(2), li:last-of-type{
+      background-color: rgba(255, 255, 255, 0.193);
+    }
+  }
 
 </style>
