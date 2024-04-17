@@ -1,4 +1,5 @@
 <template >
+  <span>Voto: </span>
   <font-awesome-icon v-for="n in rating" :icon="['fas', 'star']" />
   <font-awesome-icon v-for="n in 5-rating" :icon="['far', 'star']" /> 
 </template>

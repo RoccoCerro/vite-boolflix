@@ -6,8 +6,8 @@
           <img src="../assets/Netflix_Logo.png" alt="">
         </div>
         <div class="col">
-          <input v-model="query" type="text" placeholder="Inserisci il nome del film">
-          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ]">Cerca</button>
+          <input v-model="query" type="text" placeholder="Inserisci il nome del film" @keyup.enter="[ searchMovie(), $emit('clickOnButtonHeader') ]">
+          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ]" >Cerca</button>
         </div>
       </div>
     </div>

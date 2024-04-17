@@ -4,15 +4,25 @@
       <img :src="concatUrl()" alt="Img non presente nel database">
     </div>
     <ul class="card-description ">
-      <li v-if="movie.title !== movie.original_title || movie.name !== movie.original_name">{{ movie.title }} {{ movie.name }}</li>
-      <li>{{ movie.original_title }} {{ movie.original_name}}</li>
+      <li v-if="movie.title !== movie.original_title || movie.name !== movie.original_name">Titolo: {{ movie.title }} {{ movie.name }}</li>
+      <li>
+        Titolo Originale: 
+        <h3>
+          {{ movie.original_title }} {{ movie.original_name}}
+        </h3>
+      </li>
       <li v-if="thereIsFlag(movie.original_language)">
+        <span>Lingua: </span>
         <img :src="showFlags(movie.original_language)" alt="">
       </li>
-      <li v-else>{{ movie.original_language }}</li>
+      <li v-else>
+        <span>Lingua: </span>
+        {{ movie.original_language }}
+      </li>
       <li>
         <VoteStar :voteAverage="movie.vote_average" />
       </li>
+      <li>Overview: {{ movie.overview }}</li>
     </ul>
   </div>
 </template>
