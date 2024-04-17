@@ -1,4 +1,5 @@
 import { reactive } from 'vue'
+import axios from 'axios'
 
 export const store = reactive({
   movie: {
@@ -15,5 +16,27 @@ export const store = reactive({
     total_pages: null,
     total_results: null,
     query: ''
+  },
+
+  movieNowPlaying: {
+    page: null,
+    results: [],
+    total_pages: null,
+    total_results: null,
+  },
+
+  calledNowPlaying(){
+    axios
+      .get(
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=0e75ad5772cce745dda6b939d03ca9de&language=it_IT&page=1'  
+      )
+      .then((res)=>{
+        this.movieNowPlaying.results = res.data.results
+        this.movieNowPlaying.page = res.data.page
+        this.movieNowPlaying.total_pages = res.data.total_pages
+        this.movieNowPlaying.total_results = res.data.total_results
+        
+        console.log('Risultato ultime uscite', this.movieNowPlaying.results)
+      })
   }
 })

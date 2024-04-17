@@ -6,7 +6,7 @@
     <ul class="card-description ">
       <li v-if="movie.title !== movie.original_title || movie.name !== movie.original_name">Titolo: {{ movie.title }} {{ movie.name }}</li>
       <li>
-        Titolo Originale: 
+        <strong>Titolo Originale: </strong> 
         <h3>
           {{ movie.original_title }} {{ movie.original_name}}
         </h3>

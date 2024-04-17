@@ -12,7 +12,7 @@
   export default {
     components:{
       ContentHeader,
-      ContentMain
+      ContentMain,
     },
 
     data(){
@@ -60,7 +60,7 @@
           )
           .then((res)=>{
             this.store.tv.results = res.data.results
-            store.tv.results = res.data.results 
+            // store.tv.results = res.data.results 
             this.store.tv.page = res.data.page
             this.store.tv.total_pages = res.data.total_pages
             this.store.tv.total_results = res.data.total_results
@@ -69,10 +69,14 @@
           })
       }
     },
+    mounted(){
+      
+    },
 
     created(){
       this.calledMovieServer(),
-      this.calledTvServer()
+      this.calledTvServer(),
+      this.store.calledNowPlaying()
     }
   }
 

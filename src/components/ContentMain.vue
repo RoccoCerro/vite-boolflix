@@ -1,4 +1,10 @@
 <template>
+  <div class="container now-playing">
+    <ul class="row ">
+      <NowPlaying v-for="newMovie in store.movieNowPlaying.results" :element="newMovie"/>
+    </ul>
+  </div>
+
   <div class="content-main">
     <div class="container">
       <ul class="row">
@@ -18,6 +24,7 @@
 <script>
   import {store} from '../store.js'
   import CardMovie from './CardMovie.vue'
+  import NowPlaying from './NowPlaying.vue'
 
   export default {
     data(){
@@ -31,7 +38,8 @@
     },
 
     components:{
-      CardMovie
+      CardMovie,
+      NowPlaying
     },
 
     created(){
@@ -41,6 +49,36 @@
 </script>
 
 <style lang="scss" scoped>
+  .now-playing{
+    margin-bottom: 20px;
+
+    .row{
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      // scrollbar-width: thin;
+      gap: 5px;
+
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    
+  }
+
   .content-main{
 
     li.no-movie, li.no-tv{
