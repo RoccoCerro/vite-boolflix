@@ -1,5 +1,5 @@
 <template>
-  <div class="container now-playing">
+  <div class="container-lg now-playing">
     <ul class="row ">
       <NowPlaying v-for="newMovie in store.movieNowPlaying.results" :element="newMovie"/>
     </ul>
@@ -51,6 +51,7 @@
 <style lang="scss" scoped>
   .now-playing{
     margin-bottom: 20px;
+    padding: 10px;
 
     .row{
       flex-wrap: nowrap;

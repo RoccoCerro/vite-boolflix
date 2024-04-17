@@ -33,7 +33,7 @@
 
 <style lang="scss" scoped>
   .col{
-    flex-basis: 150px;
+    flex-basis: 200px;
     flex-shrink: 0;
   }
 </style>
