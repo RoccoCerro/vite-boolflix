@@ -2,6 +2,8 @@ import { reactive } from 'vue'
 import axios from 'axios'
 
 export const store = reactive({
+  api_key: "0e75ad5772cce745dda6b939d03ca9de",
+
   movie: {
     page: null,
     results: [],
@@ -57,7 +59,11 @@ export const store = reactive({
 
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=0e75ad5772cce745dda6b939d03ca9de`
+        `https://api.themoviedb.org/3/movie/${movieId}/credits`,{
+          params:{
+            api_key: this.api_key
+          }
+        }
       )
       .then((res)=>{
         this.castMovie.cast = res.data.cast.splice(0,5);
@@ -69,7 +75,11 @@ export const store = reactive({
 
   calledGenreMovieList(){
     axios
-      .get('https://api.themoviedb.org/3/genre/movie/list?api_key=0e75ad5772cce745dda6b939d03ca9de')
+      .get('https://api.themoviedb.org/3/genre/movie/list',{
+        params:{
+          api_key: this.api_key
+        }
+      })
       .then((res)=>{
         const genres = res.data.genres;
         const genresMap = {};
