@@ -2,12 +2,12 @@
   <div class="content-header">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col brand">
           <img src="../assets/Netflix_Logo.png" alt="">
         </div>
-        <div class="col">
+        <div class="col search">
           <input v-model="query" type="text" placeholder="Inserisci il nome del film" @keyup.enter="[ searchMovie(), $emit('clickOnButtonHeader') ]">
-          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ]" >Cerca</button>
+          <button @click="[ searchMovie(), $emit('clickOnButtonHeader') ]" ><font-awesome-icon class="icon-search" :icon="['fas', 'magnifying-glass']" /></button>
         </div>
       </div>
     </div>
@@ -45,16 +45,36 @@
       align-items: center;
     }
 
+    .search{
+      display: flex;
+    }
+
     input, button {
       height: 30px;
       border: none;
-      border-radius: variables.$radius;
-      padding: 0 5px;
+      border-radius: variables.$radius;   
+    }
+
+    button {
+      background-color: currentColor;
+      padding: 0 15px;
+      cursor: pointer;
+
+      &:hover{
+          background-color: rgb(92, 91, 91);
+        }
+
+      .icon-search{
+        color: white;
+        font-size: 20px;
+      }
+      
     }
 
     input {
       outline: none;
       margin-right: 10px;
+      padding: 0 5px;
     }
 
     img {

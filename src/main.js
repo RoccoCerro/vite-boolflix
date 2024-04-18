@@ -8,10 +8,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // import icons
-import {faStar as fasStar, faStarHalfStroke as halfStar } from "@fortawesome/free-solid-svg-icons"
+import {faStar as fasStar, faStarHalfStroke as halfStar, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
 import {faStar as farStar} from "@fortawesome/free-regular-svg-icons"
 
-library.add(fasStar, farStar, halfStar)
+library.add(fasStar, farStar, halfStar, faMagnifyingGlass)
 
 const app = createApp(App)
 
