@@ -23,3 +23,21 @@
 .col-2 {
   width: calc(2 * 100% / 12);
 }
+
+@media (max-width: 900px){
+  .col-3 {
+    width: calc(4 * 100% / 12);
+  }
+}
+
+@media (max-width: 750px){
+  .col-3 {
+    width: calc(6 * 100% / 12);
+  }
+}
+
+@media (max-width: 470px){
+  .col-3 {
+    width: calc(12 * 100% / 12);
+  }
+}

@@ -43,7 +43,7 @@
       return{
         rating: null,
         flagLanguage: "",
-        availableLanguages: ["it","en","zh","fr","es","jp"],
+        availableLanguages: ["it","en","zh","fr","es","jp","ja","cs","tr","de","tl","ar","pt","fi"],
       }
     },
 
