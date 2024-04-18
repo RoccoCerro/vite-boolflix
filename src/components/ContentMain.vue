@@ -49,6 +49,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @use '../style/partials/styleScroolBar.scss';
+
   .now-playing{
     margin-bottom: 20px;
     padding: 10px;
@@ -60,24 +62,6 @@
       gap: 5px;
 
     }
-  }
-
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #1B1B1B; 
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #252525; 
-    
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #292929; 
-    
   }
 
   .content-main{
