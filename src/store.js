@@ -25,6 +25,12 @@ export const store = reactive({
     total_results: null,
   },
 
+  castMovie:{
+    cast: [],
+    crew: [],
+    id: 0,
+  },
+
   calledNowPlaying(){
     axios
       .get(
@@ -37,6 +43,25 @@ export const store = reactive({
         this.movieNowPlaying.total_results = res.data.total_results
         
         console.log('Risultato ultime uscite', this.movieNowPlaying.results)
+      })
+  },
+
+  calledCastServer(){
+    let movieId = 0;
+
+    this.movie.results.forEach(element => {
+      movieId = element.id
+    });
+
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=0e75ad5772cce745dda6b939d03ca9de`
+      )
+      .then((res)=>{
+        this.castMovie.cast = res.data.cast;
+        this.castMovie.crew = res.data.crew;
+        // this.castMovie.id = red.data.id;
+        console.log('Risultato cast', this.castMovie.cast);
       })
   }
 })

@@ -23,12 +23,16 @@
         <VoteStar :voteAverage="movie.vote_average" />
       </li>
       <li>Overview: {{ movie.overview }}</li>
+      <li>
+        <ActorsOfTheMovie />
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
   import VoteStar from "./VoteStar.vue";
+  import ActorsOfTheMovie from './ActorsOfTheMovie.vue'
 
   export default {
     data(){
@@ -40,7 +44,8 @@
     },
 
     components:{
-      VoteStar
+      VoteStar,
+      ActorsOfTheMovie
     },
 
     props: {
