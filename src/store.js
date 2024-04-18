@@ -46,7 +46,7 @@ export const store = reactive({
       })
   },
 
-  calledCastServer(){
+  calledMovieCastServer(){
     let movieId = 0;
 
     this.movie.results.forEach(element => {
@@ -58,7 +58,10 @@ export const store = reactive({
         `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=0e75ad5772cce745dda6b939d03ca9de`
       )
       .then((res)=>{
-        this.castMovie.cast = res.data.cast;
+        this.castMovie.cast = res.data.cast.splice(0,5);
+
+
+
         this.castMovie.crew = res.data.crew;
         // this.castMovie.id = red.data.id;
         console.log('Risultato cast', this.castMovie.cast);

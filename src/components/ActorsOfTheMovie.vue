@@ -1,6 +1,6 @@
 <template>
   <h3>Attori: </h3>
-  <div v-for="actor in store.castMovie.cast">
+  <div v-for="actor in store.castMovie.cast" :key='actor.id'>
     {{actor.name}}
   </div>
 </template>
@@ -22,7 +22,7 @@
     },
 
     created(){
-      this.store.calledCastServer()
+      this.store.calledMovieCastServer()
     }
   }
 </script>
