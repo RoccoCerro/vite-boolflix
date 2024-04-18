@@ -13,7 +13,7 @@
           <CardMovie :movie="movie"/>
         </li>
         <li v-for="movie in store.tv.results" class="col-3">
-          <CardMovie :movie="movie"/>
+          <CardMovie :movie="movie"/>làkkmpàpk
         </li>
         <li class="no-movie" v-if="store.movie.results.length == 0">NON CI SONO RISULTATI TRA I FILM PER LA RICERCA EFFETTUATA</li>
         <li class="no-tv" v-if="store.tv.results.length == 0">NON CI SONO RISULTATI TRA LE SERIE TV PER LA RICERCA EFFETTUATA</li>

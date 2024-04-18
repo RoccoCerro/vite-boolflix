@@ -1,7 +1,9 @@
 <template >
   <span>Voto: </span>
-  <font-awesome-icon v-for="n in rating" :icon="['fas', 'star']" />
-  <font-awesome-icon v-for="n in 5-rating" :icon="['far', 'star']" /> 
+  <font-awesome-icon v-for="n in ratingMath" :icon="['fas', 'star']" />
+  <font-awesome-icon v-if="Halfstar()" :icon="['fas', 'star-half-stroke']" />
+  <font-awesome-icon v-if="Halfstar()" v-for="n in 4-ratingMath" :icon="['far', 'star']" />
+  <font-awesome-icon v-if="!Halfstar()" v-for="n in 5-ratingMath" :icon="['far', 'star']" /> 
 </template>
 
 <script>
@@ -12,14 +14,22 @@
 
     data(){
       return{
-        rating: 0,
+        ratingMath: 0,
+        rating: 0
       }
     },
 
     methods:{
 
       quantityOfTheSame(){
-        this.rating = Math.round(this.voteAverage / 2);
+        this.rating = this.voteAverage / 2;
+        this.ratingMath = parseInt(this.voteAverage / 2)
+      },
+
+      Halfstar(){
+        if(this.rating - this.ratingMath > 0.5){
+          return true
+        }
       }
     },
 
