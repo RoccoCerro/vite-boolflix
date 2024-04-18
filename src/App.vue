@@ -39,7 +39,7 @@
           // console.log('Risultato res.data.results', res.data.results)
 
           this.store.movie.results = res.data.results
-          store.movie.results = res.data.results 
+          // store.movie.results = res.data.results 
           this.store.movie.page = res.data.page
           this.store.movie.total_pages = res.data.total_pages
           this.store.movie.total_results = res.data.total_results
@@ -74,9 +74,10 @@
     },
 
     created(){
-      this.calledMovieServer(),
-      this.calledTvServer(),
-      this.store.calledNowPlaying()
+      this.calledMovieServer();
+      this.calledTvServer();
+      this.store.calledNowPlaying();
+      this.store.calledGenreMovieList();
     }
   }
 

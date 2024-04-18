@@ -26,6 +26,9 @@
       <li>
         <ActorsOfTheMovie />
       </li>
+      <li>
+        <GenreMovie :genresProps="movie.genre_ids"></GenreMovie>
+      </li>
     </ul>
   </div>
 </template>
@@ -33,6 +36,7 @@
 <script>
   import VoteStar from "./VoteStar.vue";
   import ActorsOfTheMovie from './ActorsOfTheMovie.vue'
+  import GenreMovie from './GenreMovie.vue'
 
   export default {
     data(){
@@ -45,7 +49,8 @@
 
     components:{
       VoteStar,
-      ActorsOfTheMovie
+      ActorsOfTheMovie,
+      GenreMovie
     },
 
     props: {

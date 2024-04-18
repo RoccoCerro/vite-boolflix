@@ -31,6 +31,8 @@ export const store = reactive({
     id: 0,
   },
 
+  genres: {},
+
   calledNowPlaying(){
     axios
       .get(
@@ -59,12 +61,25 @@ export const store = reactive({
       )
       .then((res)=>{
         this.castMovie.cast = res.data.cast.splice(0,5);
-
-
-
         this.castMovie.crew = res.data.crew;
         // this.castMovie.id = red.data.id;
         console.log('Risultato cast', this.castMovie.cast);
       })
-  }
+  },
+
+  calledGenreMovieList(){
+    axios
+      .get('https://api.themoviedb.org/3/genre/movie/list?api_key=0e75ad5772cce745dda6b939d03ca9de')
+      .then((res)=>{
+        const genres = res.data.genres;
+        const genresMap = {};
+        for (let i = 0; i < genres.length; i++) {
+          const genre = genres[i];
+          genresMap[genre.id] = genre.name;
+        }
+        console.log(genresMap);
+        this.genres = genresMap;
+        //console.log(res)
+    })
+  },
 })
