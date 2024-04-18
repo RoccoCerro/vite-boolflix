@@ -1,5 +1,5 @@
 <template>
-  
+      
       <li class="col">
 
           <img :src="concatUrl()" alt="">
@@ -25,7 +25,6 @@
     methods:{
       concatUrl(){
           return `https://image.tmdb.org/t/p/w342${this.element.poster_path}`
-
       }
     }
   }

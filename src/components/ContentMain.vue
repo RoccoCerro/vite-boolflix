@@ -1,5 +1,6 @@
 <template>
   <div class="container-lg now-playing">
+    <h1>LE ULTIME USCITE</h1>
     <ul class="row ">
       <NowPlaying v-for="newMovie in store.movieNowPlaying.results" :element="newMovie"/>
     </ul>
@@ -54,6 +55,10 @@
   .now-playing{
     margin-bottom: 20px;
     padding: 10px;
+
+    h1{
+      color: rgba(255, 255, 255, 0.671);
+    }
 
     .row{
       flex-wrap: nowrap;
