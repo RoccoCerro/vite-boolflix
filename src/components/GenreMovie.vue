@@ -3,7 +3,6 @@
     <li>
       <h3>Generi: </h3>
       <span v-for="genre in genres"> {{ genre }} </span>
-      <span >,</span>
     </li>
   </ul>
 </template>
