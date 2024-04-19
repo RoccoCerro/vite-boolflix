@@ -9,10 +9,10 @@
   <div class="content-main">
     <div class="container">
       <ul class="row">
-        <li v-for="movie in store.movie.results" class="col-3">
+        <li v-for="movie in store.movie.results" class="col-3" :class="{'display-none': movie.poster_path === null }">
           <CardMovie :movie="movie"/>
         </li>
-        <li v-for="movie in store.tv.results" class="col-3">
+        <li v-for="movie in store.tv.results" class="col-3" :class="{'display-none': movie.poster_path === null }">
           <CardMovie :movie="movie"/>
         </li>
         <li class="no-movie" v-if="store.movie.results.length == 0">NON CI SONO RISULTATI TRA I FILM PER LA RICERCA EFFETTUATA</li>
@@ -51,6 +51,10 @@
 
 <style lang="scss" scoped>
   @use '../style/partials/styleScroolBar.scss';
+
+  .display-none{
+    display: none;
+  }
 
   .now-playing{
     margin-bottom: 20px;
