@@ -26,7 +26,7 @@
       <li>
         <ActorsOfTheMovie />
       </li>
-      <li>
+      <li :class="{'display-none' : movie.genre_ids.length === 0}">
         <GenreMovie :genresProps="movie.genre_ids"></GenreMovie>
       </li>
     </ul>

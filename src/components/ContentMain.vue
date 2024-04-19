@@ -52,10 +52,6 @@
 <style lang="scss" scoped>
   @use '../style/partials/styleScroolBar.scss';
 
-  .display-none{
-    display: none;
-  }
-
   .now-playing{
     margin-bottom: 20px;
     padding: 10px;
